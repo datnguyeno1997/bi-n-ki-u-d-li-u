@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+    
+    <table>
+        <tbody>
+            <tr>
+                <th>
+                    <label for="Amount">Amount</label>
+                <th>From Currency</th>
+                <th>To Currency</th>
+                <th></th>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="Amount">
+                </td>
+                <td>
+                    <select id="From">
+                        <option value="VND">VND</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="To">
+                        <option value="VND">VND</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </td>
+                <td>
+                    <button onclick="ChangeMoney()">Convert</button>
+                    
+                </td>
+            </tr>
+                 <td>
+            <p>Result: <span id="show">111</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function ChangeMoney(){
+            let z = document.getElementById('Amount').value;
+            let a = document.getElementById('From').value;
+            let b = document.getElementById('To').value;
+            if (a=='USD') {
+                if (b=='VND') {
+                    let c = z * 23000
+                document.getElementById('show').innerText = c
+                } else {
+                    document.getElementById('show').innerText = c
+                }
+            } else if (a=='VND') {
+                if (b=='USD') {
+                    let c = z / 23000
+                    document.getElementById('show').innerText = c
+                } else {
+                    document.getElementById('show').innerText = c
+                }
+            }
+        }
+    </script>
+</body>
+</html>
